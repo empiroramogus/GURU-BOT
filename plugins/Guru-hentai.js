@@ -5,16 +5,16 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
     if (!text) throw `*This command provides sauce from nhentai: ${usedPrefix + command} miku*`
     try {
     m.reply(global.wait)
-    let res = await fetch(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=${lolkeysapi}&query=${text}`)    
+    let res = await fetch(``)    
     let json = await res.json()
     let aa = json.result[0].id
     let aa2 = json.result[0].title_native
-    let res2 = await fetch(`https://api.lolhuman.xyz/api/nhentaipdf/${aa}?apikey=${lolkeysapi}`)
+    let res2 = await fetch(``)
     let json2 = await res2.json()
     let aa3 = json2.result
     await conn.sendMessage(m.chat, { document: { url: aa3 }, mimetype: 'application/pdf', fileName: `${aa2}.pdf` }, { quoted: m })
     } catch {
-    throw `*ERROR NOT FOUND TRY SEARCHING ANOTHER QUERY*`
+    throw ``
     }}
-    handler.command = /^(hentai)$/i
+    handler.command = /^(poppsggsdf)$/i
     export default handler
